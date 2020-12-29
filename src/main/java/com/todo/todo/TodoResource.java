@@ -21,7 +21,6 @@ public class TodoResource {
 	
 	@GetMapping("/users/{username}/todos")
 	public List<Todo> getAlltodos(@PathVariable String username) throws InterruptedException{
-		//Thread.sleep(3000);
 		return todoService.findAll() ;
 		
 	}
