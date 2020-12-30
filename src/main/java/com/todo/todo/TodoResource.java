@@ -21,11 +21,10 @@ public class TodoResource {
 	
 	@GetMapping("/users/{username}/todos")
 	public List<Todo> getAlltodos(@PathVariable String username) throws InterruptedException{
-		//Thread.sleep(3000);
 		return todoService.findAll() ;
 		
 	}
-	
+	//DELETE /users/{username}/todos/id
 	@DeleteMapping("/users/{username}/todos/{id}")
 	public ResponseEntity<Void> deleteTodo(@PathVariable String username, @PathVariable long id) {
 		Todo todo =todoService.deleteById(id);
